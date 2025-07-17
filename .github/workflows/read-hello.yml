@@ -1,0 +1,17 @@
+name: Read The Hello Text File
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  read_the_file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out the repository
+        uses: actions/checkout@v2
+
+      - name: Display the text of this file
+        run: |
+          echo "Contents of this File: "
+          cat hello.txt
